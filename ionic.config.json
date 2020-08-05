@@ -1,0 +1,7 @@
+{
+  "name": "ionic-jikan",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
