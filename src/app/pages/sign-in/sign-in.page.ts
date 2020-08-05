@@ -15,15 +15,9 @@ export class SignInPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.disableMenu();
-  }
-
-  async disableMenu() {
-    await this.menu.enable(false);
   }
 
   async signIn() {
-    await this.menu.enable(true)
     await this.router.navigate(['/top-anime'])
   }
 }
