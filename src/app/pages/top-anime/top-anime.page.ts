@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JikanService} from "../../api/jikan.service";
 
 @Component({
   selector: 'app-top-anime',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopAnimePage implements OnInit {
 
-  constructor() { }
+  constructor(
+      private jikan: JikanService
+  ) { }
 
   ngOnInit() {
+    this.jikan.getTopAnime();
   }
 
 }
