@@ -41,9 +41,15 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.refreshSelectedPageInMenu();
+  }
+
+  refreshSelectedPageInMenu() {
     const path = window.location.pathname;
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.url.toLowerCase() === path.toLowerCase());
     }
   }
+
+
 }
