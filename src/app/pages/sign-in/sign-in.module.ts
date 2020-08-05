@@ -8,6 +8,7 @@ import { SignInPageRoutingModule } from './sign-in-routing.module';
 
 import { SignInPage } from './sign-in.page';
 import {LogoComponent} from "../../components/logo/logo.component";
+import {HeaderComponent} from "../../components/header/header.component";
 
 @NgModule({
   imports: [
@@ -17,8 +18,9 @@ import {LogoComponent} from "../../components/logo/logo.component";
     SignInPageRoutingModule,
   ],
   exports: [
-    LogoComponent
+    LogoComponent,
+    HeaderComponent
   ],
-  declarations: [SignInPage, LogoComponent]
+    declarations: [SignInPage, LogoComponent, HeaderComponent]
 })
 export class SignInPageModule {}
