@@ -2,21 +2,18 @@
 
 <ion-content>
 
-    <div style="margin: 40px;">
+    <div class="ion-margin-vertical ion-margin-start">
         <h3>50 TOP ANIME TITLES ON MYANIMELIST</h3>
     </div>
 
     <ion-grid>
         <ion-row>
-            <ion-card>
+            <ion-card *ngFor="let anime of topAnimeList">
+                <img src="{{anime.image_url}}">
                 <ion-card-header>
-                    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                    <ion-card-title>Card Title</ion-card-title>
+                    <ion-card-subtitle>{{anime.start_date}} - {{anime.episodes}} episodes</ion-card-subtitle>
+                    <ion-card-title>{{anime.title}}</ion-card-title>
                 </ion-card-header>
-
-                <ion-card-content>
-                    Keep close to Nature's heart... and break clear away, once in awhile
-                </ion-card-content>
             </ion-card>
         </ion-row>
     </ion-grid>

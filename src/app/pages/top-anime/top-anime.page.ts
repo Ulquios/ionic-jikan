@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { JikanService} from "../../api/jikan.service";
+import { JikanService} from '../../api/jikan.service';
+import {AnimeList} from 'jikan-client/dist/interfaces/user/AnimeList';
 
 @Component({
   selector: 'app-top-anime',
@@ -8,12 +9,18 @@ import { JikanService} from "../../api/jikan.service";
 })
 export class TopAnimePage implements OnInit {
 
+  topAnimeList: any;
+
   constructor(
       private jikan: JikanService
   ) { }
 
   ngOnInit() {
-    this.jikan.getTopAnime();
+    this.getTopAnime();
+  }
+
+  async getTopAnime() {
+    this.topAnimeList = await this.jikan.getTopAnime();
   }
 
 }

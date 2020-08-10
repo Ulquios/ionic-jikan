@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import JikanTS from "jikants";
+import * as Mal from 'jikan-client';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,7 @@ export class JikanService {
 
   constructor() { }
 
-  getTopAnime() {
-    // JikanTS.Top.items("anime", 1, "airing").then(b => console.log(b));
+  async getTopAnime() {
+    return await Mal.Top.items('anime', 1);
   }
 }
