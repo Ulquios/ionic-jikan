@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
-import * as Mal from 'jikan-client';
-
+import {HttpClient} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class JikanService {
 
-  constructor() { }
+  constructor(
+      private http: HttpClient
+  ) { }
 
-  async getTopAnime() {
-    return await Mal.Top.items('anime', 1);
+  getTopAnime() {
+    return this.http.get('https://api.jikan.moe/v3/top/anime/1');
+  }
+
+  getAnimeDetail(id) {
+    return this.http.get('https://api.jikan.moe/v3/anime/' + id);
   }
 }

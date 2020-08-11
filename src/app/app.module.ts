@@ -8,7 +8,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import {SignInPageModule} from "./pages/sign-in/sign-in.module";
+import {SignInPageModule} from './pages/sign-in/sign-in.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +18,8 @@ import {SignInPageModule} from "./pages/sign-in/sign-in.module";
         BrowserModule,
         IonicModule.forRoot(),
         AppRoutingModule,
-        SignInPageModule
+        SignInPageModule,
+        HttpClientModule,
     ],
   providers: [
     StatusBar,

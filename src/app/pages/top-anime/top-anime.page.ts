@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JikanService} from '../../api/jikan.service';
-import {AnimeList} from 'jikan-client/dist/interfaces/user/AnimeList';
+import { ModalController } from '@ionic/angular';
+import {AnimeDetailComponent} from './anime-detail/anime-detail.component';
 
 @Component({
   selector: 'app-top-anime',
@@ -12,15 +13,28 @@ export class TopAnimePage implements OnInit {
   topAnimeList: any;
 
   constructor(
-      private jikan: JikanService
+      private jikan: JikanService,
+      public modalController: ModalController
   ) { }
 
   ngOnInit() {
     this.getTopAnime();
   }
 
-  async getTopAnime() {
-    this.topAnimeList = await this.jikan.getTopAnime();
+  getTopAnime() {
+    this.jikan.getTopAnime().subscribe(data => {
+      this.topAnimeList = data.top;
+    });
+  }
+
+  async displayAnimeDetail(animeId) {
+    const modal = await this.modalController.create({
+      component: AnimeDetailComponent,
+      componentProps: {
+        id: animeId,
+      }
+    });
+    return await modal.present();
   }
 
 }

@@ -8,7 +8,7 @@
 
     <ion-grid>
         <ion-row>
-            <ion-card *ngFor="let anime of topAnimeList">
+            <ion-card *ngFor="let anime of topAnimeList" (click)="displayAnimeDetail(anime.mal_id)">
                 <img src="{{anime.image_url}}">
                 <ion-card-header>
                     <ion-card-subtitle>{{anime.start_date}} - {{anime.episodes}} episodes</ion-card-subtitle>
