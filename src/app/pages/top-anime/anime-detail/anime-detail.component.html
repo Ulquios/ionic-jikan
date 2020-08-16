@@ -1,39 +1,32 @@
 <ion-header translucent>
   <ion-toolbar>
-    <ion-title>Modal Content</ion-title>
+    <ion-title>Details</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="dismiss()">Close</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 <ion-content fullscreen>
-  <ion-list>
-    <ion-item>
-      <ion-avatar slot="start">
-        <ion-img src="./avatar-gollum.jpg"></ion-img>
-      </ion-avatar>
-      <ion-label>
-        <h2>Gollum</h2>
-        <p>Sneaky little hobbitses!</p>
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-avatar slot="start">
-        <ion-img src="./avatar-frodo.jpg"></ion-img>
-      </ion-avatar>
-      <ion-label>
-        <h2>Frodo</h2>
-        <p>Go back, Sam! I'm going to Mordor alone!</p>
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-avatar slot="start">
-        <ion-img src="./avatar-samwise.jpg"></ion-img>
-      </ion-avatar>
-      <ion-label>
-        <h2>Samwise</h2>
-        <p>What we need is a few good taters.</p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+  <ion-grid>
+    <ion-row>
+
+      <ion-col size-xs="7" size-md="5" size-lg="4">
+        <ion-img src="{{anime.image_url}}"></ion-img>
+      </ion-col>
+
+      <ion-col size-xs="12" size-md="7" size-lg="8">
+        <ion-text class="ion-text-center">
+          <div>{{anime.premiered + ' - ' + anime.episodes + ' episodes'}}</div>
+        </ion-text>
+        <ion-text class="ion-text-center">
+          <h3>{{anime.title}}</h3>
+        </ion-text>
+        <ion-text class="ion-text-justify">
+          <div class="ion-justify-content-start">{{anime.background}}</div>
+        </ion-text>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
 </ion-content>

@@ -11,7 +11,13 @@ export class AnimeDetailComponent implements OnInit {
 
   @Input() id: string;
 
-  anime: any;
+  anime = {
+      background: '',
+      title: '',
+      episodes: '',
+      premiered: '',
+      image_url: '',
+    };
 
   constructor(
       public modalController: ModalController,
@@ -19,14 +25,16 @@ export class AnimeDetailComponent implements OnInit {
       ) { }
 
   ngOnInit() {
-    console.log('ngOnInit');
     this.getAnimeDetail();
   }
 
   getAnimeDetail() {
-    console.log(this.id);
     this.jikan.getAnimeDetail(this.id).subscribe(data => {
-      this.anime = data;
+      this.anime.background = data.background;
+      this.anime.title = data.title;
+      this.anime.episodes = data.episodes;
+      this.anime.premiered = data.premiered;
+      this.anime.image_url = data.image_url;
     });
   }
 
