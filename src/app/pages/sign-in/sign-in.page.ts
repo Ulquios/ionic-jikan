@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuController} from "@ionic/angular";
-import {Router} from "@angular/router";
+import {MenuController} from '@ionic/angular';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -12,12 +12,21 @@ export class SignInPage implements OnInit {
   constructor(
       private menu: MenuController,
       private router: Router
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
   }
 
   async signIn() {
-    await this.router.navigate(['/top-anime'])
+    await this.router.navigate(['/top-anime']);
+  }
+
+  async ionViewWillEnter() {
+    await this.menu.enable(false);
+  }
+
+  async ionViewWillLeave() {
+    await this.menu.enable(true);
   }
 }
