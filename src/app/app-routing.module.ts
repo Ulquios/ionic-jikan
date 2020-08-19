@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'top-anime',
     loadChildren: () => import('./pages/top-anime/top-anime.module').then( m => m.TopAnimePageModule)
+  },
+  {
+    path: 'top-anime-stencil',
+    loadChildren: () => import('./pages/top-anime-stencil/top-anime-stencil.module').then( m => m.TopAnimeStencilPageModule)
   }
 ];
 
