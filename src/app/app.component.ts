@@ -22,6 +22,11 @@ export class AppComponent implements OnInit {
       url: '/top-anime',
       icon: 'ribbon'
     },
+    {
+      title: 'Top anime (Stencil.js)',
+      url: '/top-anime-stencil',
+      icon: 'ribbon'
+    },
   ];
 
   constructor(

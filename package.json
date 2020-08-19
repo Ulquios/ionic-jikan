@@ -29,6 +29,7 @@
     "jikants": "^1.2.13",
     "rxjs": "~6.5.1",
     "tslib": "^1.10.0",
+    "ulq-components": "0.0.1",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
